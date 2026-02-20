@@ -9,14 +9,38 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
 
     private Rigidbody _rb;
+    private PlayerInput _playerInput;
     private Vector2 _moveInput;
- 
+
+    void Awake()
+    {
+        _playerInput = new PlayerInput();
+    }
+
+    private void OnEnable()
+    {
+        _playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _playerInput.Disable();
+    }
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
+
+    private void Update()
+    {
+        Vector2 move = _playerInput.Land.MoveInput.ReadValue<Vector2>();
+        Debug.Log(move);
+        _playerInput.Land.Jump.ReadValue<float>();
+        if (_playerInput.Land.Jump.ReadValue<float>() == 1);
+    }
     void FixedUpdate()
     {
         Vector3 move = 
