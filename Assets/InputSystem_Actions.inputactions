@@ -1,5 +1,8 @@
 {
+<<<<<<< Neil-Fadelle
     "version": 1,
+=======
+>>>>>>> main
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -28,7 +31,11 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
+<<<<<<< Neil-Fadelle
                     "expectedControlType": "",
+=======
+                    "expectedControlType": "Button",
+>>>>>>> main
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
