@@ -40,7 +40,11 @@ public class PlayerController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             rb.AddForce(Vector3.up * velocity.y, ForceMode.Impulse);
         }
+    }
 
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        Debug.Log("Interacting");
     }
 
     void Update()
