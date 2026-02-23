@@ -10,7 +10,7 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "8cf29956-5851-471c-8b09-c44d380e224a",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -259,6 +259,67 @@
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "movement",
+            "id": "c58794e2-167f-4558-94c4-4116d716e9a1",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "22214ed8-4886-4dbc-b412-b27fb12c05be",
+                    "expectedControlType": "Dpad",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4e6e3cef-30b8-4618-9f94-4e6f8c7f9c4e",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Desktop",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "816621d7-f05e-4df7-a542-d2260a9d89a0",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Desktop",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae24797a-c5c7-4516-b0cf-67a52b02679c",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Desktop",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "685861b2-0a01-487f-80d8-f167e50d97ba",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Desktop",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
