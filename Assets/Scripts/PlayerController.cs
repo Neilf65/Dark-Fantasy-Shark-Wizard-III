@@ -1,12 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 0.05f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.0f;
+    
+    private float interactRange = 2;
+    public LayerMask interactableLayerMask;
 
     [SerializeField] private Transform cameraTransform;
 
@@ -14,14 +19,24 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     
     private Vector2 moveInput;
+    private Vector2 lookInput;
     private Vector3 velocity;
     private Vector2 camRotation;
+    private bool isGrounded;
+    RaycastHit[] hits = new RaycastHit[4];
+    Ray ray;
+
+
+
+
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+
+        // ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
     }
 
@@ -37,14 +52,13 @@ public class PlayerController : MonoBehaviour
         if (context.performed && controller.isGrounded)
         {
             Debug.Log("We are supposed to jump");
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            rb.AddForce(Vector3.up * velocity.y, ForceMode.Impulse);
-        }
+            velocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
+        }    
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("Interacting");
+        //Physics.Raycast(ray, out)
     }
 
     void Update()
@@ -55,45 +69,47 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-        
 
+        CheckForColliders();
     }
 
-    private void FixedUpdate()
-    {
-        Vector3 move = cameraTransform.forward * moveInput.y + cameraTransform.right * moveInput.x;
-        move.y = 0f;
-        rb.AddForce(move.normalized * moveSpeed, ForceMode.VelocityChange);
-
-
-
-    }
-
-    private void LateUpdate()
+    void LateUpdate()
     {
         RotatePlayerToCameraForward();
     }
-
     private void RotatePlayerToCameraForward()
-    {
-        
-        Vector3 cameraForward = Camera.main.transform.forward;
-        Vector3 cameraRight = Camera.main.transform.right;
+     {
+        Vector3 forwardRelativeMovementVector = cameraTransform.forward;
+        Vector3 rightRelativeMovementVector = cameraTransform.right;
 
-        cameraForward.y = 0f;
-        cameraRight.y = 0f;
-        cameraForward.Normalize();
-        cameraRight.Normalize();
+        forwardRelativeMovementVector.y = 0f;
+        rightRelativeMovementVector.y = 0f;
+        forwardRelativeMovementVector.Normalize();
+        rightRelativeMovementVector.Normalize();
+
+        Vector3 forwardCam = moveInput.y * forwardRelativeMovementVector;
+        Vector3 rightCam = moveInput.x * rightRelativeMovementVector;
+
+        Vector3 cameraRelativeMovement = forwardCam + rightCam;
+
+        transform.Translate(cameraRelativeMovement / 50);
 
 
-        Vector3 forwardRelativeMovementVector = moveInput.y * cameraForward;
-        Vector3 rightRelativeMovementVector = moveInput.x * cameraRight;
-
-
-        Vector3 cameraRelativeMovement = forwardRelativeMovementVector + rightRelativeMovementVector;
-    
-        controller.Move(cameraRelativeMovement / 50f);
 
     }
 
+    private void CheckForColliders()
+    {
+        int numHits = Physics.RaycastNonAlloc(ray, hits);
+
+        if (numHits > 0)
+        {
+            Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
+
+            for (int i = 0; i < numHits;i++)
+            {
+                Debug.Log(hits[i].collider.gameObject.name + " was hit!");
+            }
+        }
+    }
 }
