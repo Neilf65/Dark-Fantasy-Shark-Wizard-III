@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 cameraRelativeMovement = forwardCam + rightCam;
 
-        transform.Translate(cameraRelativeMovement / 50);
+        transform.Translate(cameraRelativeMovement / 50, Space.World);
 
 
 
