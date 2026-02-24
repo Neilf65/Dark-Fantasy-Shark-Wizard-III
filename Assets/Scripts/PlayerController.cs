@@ -22,12 +22,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookInput;
     private Vector3 velocity;
     private Vector2 camRotation;
-    private bool isGrounded;
+    private bool ShouldFaceMoveDirection;
+
     RaycastHit[] hits = new RaycastHit[4];
     Ray ray;
 
 
-
+    void Awake()
+    {
+        // RotatePlayerToCameraForward();
+    }
 
 
     void Start()
@@ -64,21 +68,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //inputs
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
-        controller.Move(move * moveSpeed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-
-        CheckForColliders();
-    }
-
-    void LateUpdate()
-    {
-        RotatePlayerToCameraForward();
-    }
-    private void RotatePlayerToCameraForward()
-     {
         Vector3 forwardRelativeMovementVector = cameraTransform.forward;
         Vector3 rightRelativeMovementVector = cameraTransform.right;
 
@@ -87,16 +76,43 @@ public class PlayerController : MonoBehaviour
         forwardRelativeMovementVector.Normalize();
         rightRelativeMovementVector.Normalize();
 
-        Vector3 forwardCam = moveInput.y * forwardRelativeMovementVector;
-        Vector3 rightCam = moveInput.x * rightRelativeMovementVector;
+        Vector3 moveDirection = forwardRelativeMovementVector * moveInput.y + rightRelativeMovementVector * moveInput.x;
+        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
 
-        Vector3 cameraRelativeMovement = forwardCam + rightCam;
-
-        transform.Translate(cameraRelativeMovement / 50);
-
+        if (ShouldFaceMoveDirection && moveDirection.sqrMagnitude > 0.01f)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
+        }
+        
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
 
 
     }
+
+    void LateUpdate()
+    {
+
+    }
+    // private void RotatePlayerToCameraForward()
+    //  {
+    //     Vector3 forwardRelativeMovementVector = cameraTransform.forward;
+    //     Vector3 rightRelativeMovementVector = cameraTransform.right;
+
+    //     forwardRelativeMovementVector.y = 0f;
+    //     rightRelativeMovementVector.y = 0f;
+    //     forwardRelativeMovementVector.Normalize();
+    //     rightRelativeMovementVector.Normalize();
+
+    //     Vector3 forwardCam = moveInput.y * forwardRelativeMovementVector;
+    //     Vector3 rightCam = moveInput.x * rightRelativeMovementVector;
+
+    //     Vector3 cameraRelativeMovement = forwardCam + rightCam;
+
+    //     transform.Translate(cameraRelativeMovement / Space.World);
+
+    // }
 
     private void CheckForColliders()
     {
