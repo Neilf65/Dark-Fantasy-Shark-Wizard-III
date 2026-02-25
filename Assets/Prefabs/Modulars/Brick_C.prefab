@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick_C
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: feb3e6ca7e54d6c4a9a7738ef30d9fd0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
