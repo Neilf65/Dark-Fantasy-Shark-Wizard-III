@@ -495,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e795a551c581ff84d9d4dd2ef2b8c326, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.43
+      value: -16.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e795a551c581ff84d9d4dd2ef2b8c326, type: 3}
       propertyPath: m_LocalRotation.w
@@ -648,6 +648,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a70d6c45b2cfb54db2545d0325e075e, type: 3}
+--- !u!1001 &1127308273
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.211
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.184
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.368
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_Name
+      value: goblin diver nubs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
 --- !u!1001 &1205938290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,3 +832,4 @@ SceneRoots:
   - {fileID: 713693522}
   - {fileID: 1059254546}
   - {fileID: 992454699}
+  - {fileID: 1127308273}
