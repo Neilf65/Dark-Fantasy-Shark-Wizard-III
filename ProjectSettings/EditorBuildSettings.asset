@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1dd6c64f683394244b0b162273491dca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Don_Models.unity
     guid: 9c30821c3a5dc3e418efaf6fe8c36742
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestFPSScene.unity
     guid: 9b96214d818673642a18cd7fd7ca345a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Greg.unity
     guid: 9c2a3b3b4c30d8342b7161edf4768515
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EnemyAITest.unity
     guid: a62386071da2e45498b4655dc008f71a
   - enabled: 1

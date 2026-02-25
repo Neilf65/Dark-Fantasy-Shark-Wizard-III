@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -91,41 +92,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void LateUpdate()
+    void OnTriggerEnter(Collider other)
     {
-
-    }
-    // private void RotatePlayerToCameraForward()
-    //  {
-    //     Vector3 forwardRelativeMovementVector = cameraTransform.forward;
-    //     Vector3 rightRelativeMovementVector = cameraTransform.right;
-
-    //     forwardRelativeMovementVector.y = 0f;
-    //     rightRelativeMovementVector.y = 0f;
-    //     forwardRelativeMovementVector.Normalize();
-    //     rightRelativeMovementVector.Normalize();
-
-    //     Vector3 forwardCam = moveInput.y * forwardRelativeMovementVector;
-    //     Vector3 rightCam = moveInput.x * rightRelativeMovementVector;
-
-    //     Vector3 cameraRelativeMovement = forwardCam + rightCam;
-
-    //     transform.Translate(cameraRelativeMovement / Space.World);
-
-    // }
-
-    private void CheckForColliders()
-    {
-        int numHits = Physics.RaycastNonAlloc(ray, hits);
-
-        if (numHits > 0)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
-
-            for (int i = 0; i < numHits;i++)
-            {
-                Debug.Log(hits[i].collider.gameObject.name + " was hit!");
-            }
+            Debug.Log("Collided with Enemy");
+            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
