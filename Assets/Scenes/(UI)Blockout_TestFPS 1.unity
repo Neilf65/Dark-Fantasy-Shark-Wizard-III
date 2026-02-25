@@ -5412,6 +5412,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Objective(UI)
       objectReference: {fileID: 0}
+    - target: {fileID: 2023246186508354552, guid: 3d977a14db42a6341bc3680802c564c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324415208042410546, guid: 3d977a14db42a6341bc3680802c564c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7463457321453443767, guid: 3d977a14db42a6341bc3680802c564c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0036
@@ -5422,7 +5430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7463457321453443767, guid: 3d977a14db42a6341bc3680802c564c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: -18.45
       objectReference: {fileID: 0}
     - target: {fileID: 7463457321453443767, guid: 3d977a14db42a6341bc3680802c564c6, type: 3}
       propertyPath: m_LocalRotation.w
