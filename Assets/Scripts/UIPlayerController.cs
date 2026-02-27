@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIPlayerController : MonoBehaviour
 {
-    // ✅ Attempt manager reference
     private AttemptManager attemptManager;
-
     [SerializeField] private float moveSpeed = 0.05f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.0f;
@@ -21,18 +19,26 @@ public class UIPlayerController : MonoBehaviour
     private Rigidbody rb;
 
     private Vector2 moveInput;
+    private Vector2 lookInput;
     private Vector3 velocity;
+    private Vector2 camRotation;
     private bool ShouldFaceMoveDirection;
 
     RaycastHit[] hits = new RaycastHit[4];
     Ray ray;
+
+
+    void Awake()
+    {
+        // RotatePlayerToCameraForward();
+    }
+
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
-
         attemptManager = FindObjectOfType<AttemptManager>();
 
         if (attemptManager == null)
@@ -40,48 +46,67 @@ public class UIPlayerController : MonoBehaviour
             Debug.LogError("AttemptManager not found in scene!");
         }
     }
+    // ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+        Debug.Log($"Move Input: {moveInput}");
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        Debug.Log($"Jumping {context.performed} - Is Grounded: {controller.isGrounded}");
         if (context.performed && controller.isGrounded)
         {
+            Debug.Log("We are supposed to jump");
             velocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
         }
     }
 
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        //Physics.Raycast(ray, out)
+    }
+
     void Update()
     {
-        Vector3 forward = cameraTransform.forward;
-        Vector3 right = cameraTransform.right;
+        //inputs
+        Vector3 forwardRelativeMovementVector = cameraTransform.forward;
+        Vector3 rightRelativeMovementVector = cameraTransform.right;
 
-        forward.y = 0f;
-        right.y = 0f;
+        forwardRelativeMovementVector.y = 0f;
+        rightRelativeMovementVector.y = 0f;
+        forwardRelativeMovementVector.Normalize();
+        rightRelativeMovementVector.Normalize();
 
-        forward.Normalize();
-        right.Normalize();
-
-        Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
+        Vector3 moveDirection = forwardRelativeMovementVector * moveInput.y + rightRelativeMovementVector * moveInput.x;
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        if (ShouldFaceMoveDirection && moveDirection.sqrMagnitude > 0.01f)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
+        }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+
     }
     private bool isDead = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (isDead) return; // 🔒 block duplicates
+        if (isDead) return;
 
         if (other.CompareTag("Enemy"))
         {
-            isDead = true; // 🔒 lock immediately
+            isDead = true;
 
             Debug.Log("Collided with Enemy");
+            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
 
             attemptManager?.IncrementAttempts();
 
@@ -89,3 +114,4 @@ public class UIPlayerController : MonoBehaviour
         }
     }
 }
+
