@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 0.05f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.0f;
-    
+
     private float interactRange = 2;
     public LayerMask interactableLayerMask;
 
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController controller;
     private Rigidbody rb;
-    
+
     private Vector2 moveInput;
     private Vector2 lookInput;
     private Vector3 velocity;
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("We are supposed to jump");
             velocity.y = Mathf.Sqrt(-2f * jumpHeight * gravity);
-        }    
+        }
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
         }
-        
+
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
