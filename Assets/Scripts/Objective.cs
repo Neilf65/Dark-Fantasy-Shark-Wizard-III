@@ -15,7 +15,7 @@ public class Objective : MonoBehaviour
    private IEnumerator missionObj()
    {
     theText.GetComponent<Text>().text = "Objective: Go to castle";
-    yield return new WaitForSeconds(5.3f);
+    yield return new WaitForSeconds(0f);
     theTrigger.SetActive(false);
    }
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
+    private AttemptManager attemptManager;
     [SerializeField] private float moveSpeed = 0.05f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.0f;
@@ -40,10 +40,15 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        attemptManager = FindObjectOfType<AttemptManager>();
 
-        // ray = new Ray(cameraTransform.position, cameraTransform.forward);
-
+        if (attemptManager == null)
+        {
+            Debug.LogError("AttemptManager not found in scene!");
+        }
     }
+    // ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -91,13 +96,21 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    private bool isDead = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (isDead) return;
+
+        if (other.CompareTag("Enemy"))
         {
+            isDead = true;
+
             Debug.Log("Collided with Enemy");
             EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
+
+            attemptManager?.IncrementAttempts();
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
