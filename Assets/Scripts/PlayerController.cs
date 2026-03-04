@@ -106,13 +106,13 @@ public class PlayerController : MonoBehaviour
         {
             isDead = true;
 
+            LoseManager.manager.Lose();
+
             Debug.Log("Collided with Enemy");
             EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
 
             attemptManager?.IncrementAttempts();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
-

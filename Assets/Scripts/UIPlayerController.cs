@@ -105,6 +105,8 @@ public class UIPlayerController : MonoBehaviour
         {
             isDead = true;
 
+            LoseManager.manager.Lose();
+
             Debug.Log("Collided with Enemy");
             EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
 

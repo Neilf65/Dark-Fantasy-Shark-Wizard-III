@@ -10,8 +10,7 @@ public class Pausemenu : MonoBehaviour
     
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
-    public GameObject resumeButton;
-    public GameObject restartButton;
+
 
     void Start()
     {
@@ -23,10 +22,10 @@ public class Pausemenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !LoseManager.isGameOver)
         {
             if (isPaused)
                 ResumeGame();
@@ -61,8 +60,7 @@ public class Pausemenu : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
     }
     public void ReturnToTitle()
      {

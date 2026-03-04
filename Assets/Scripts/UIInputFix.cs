@@ -18,8 +18,9 @@ public class HighlightFix : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        EventSystem.current.SetSelectedGameObject(lastSelectedGameObject);
-        lastSelectedGameObject = this.gameObject;
+        
+       // EventSystem.current.SetSelectedGameObject(lastSelectedGameObject); 
+        //lastSelectedGameObject = this.gameObject; 
     }
 
     public void OnDeselect(BaseEventData eventData)
