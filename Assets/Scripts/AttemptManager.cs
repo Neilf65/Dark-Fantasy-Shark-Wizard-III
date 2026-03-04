@@ -4,7 +4,7 @@ public class AttemptManager : MonoBehaviour
 {
     public static AttemptManager Instance;
 
-    private int attempts;
+    private int attempts = 0;
     [SerializeField] private TMPro.TextMeshProUGUI attemptCounterText;
 
     void Awake()
@@ -34,4 +34,10 @@ public class AttemptManager : MonoBehaviour
     {
         attemptCounterText.text = $"Attempts: {attempts}";
     }
+
+    // Add this method to reset attempts
+        public void ResetAttempts()
+        {
+            attempts = 0;
+        }
 }
