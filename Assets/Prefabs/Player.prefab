@@ -68,6 +68,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8998584037759787997}
+  - {fileID: 3709338568177292485}
   m_Father: {fileID: 9202435385707975267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3229927113935941763
@@ -133,6 +134,9 @@ MonoBehaviour:
   moveSpeed: 5
   jumpHeight: 2
   gravity: -9
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   cameraTransform: {fileID: 0}
 --- !u!114 &5402983214380421596
 MonoBehaviour:
@@ -215,6 +219,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 61847eb1-230d-4234-a502-f965a22f86f7
     m_ActionName: 'Land/Sprint[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16920f53-8d02-48ac-b37f-f9508450744d
+    m_ActionName: 'Land/Point[/Mouse/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Land
@@ -335,3 +343,73 @@ Transform:
   - {fileID: 1213272597388175436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3814705818819916590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1213272597388175436}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.009999998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.009999998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.055
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.412
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+      propertyPath: m_Name
+      value: goblin diver nubs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+--- !u!4 &3709338568177292485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc05040bc83528144a9acb82a30edfb8, type: 3}
+  m_PrefabInstance: {fileID: 3814705818819916590}
+  m_PrefabAsset: {fileID: 0}
