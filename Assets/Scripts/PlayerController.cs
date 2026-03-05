@@ -91,34 +91,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-<<<<<<< Updated upstream
-    void LateUpdate()
-=======
-
-    // Collision Detection for interactable hazards and collectibles
-    void OnTriggerEnter(Collider other)
->>>>>>> Stashed changes
-    {
-
-    }
-    // private void RotatePlayerToCameraForward()
-    //  {
-    //     Vector3 forwardRelativeMovementVector = cameraTransform.forward;
-    //     Vector3 rightRelativeMovementVector = cameraTransform.right;
-
-    //     forwardRelativeMovementVector.y = 0f;
-    //     rightRelativeMovementVector.y = 0f;
-    //     forwardRelativeMovementVector.Normalize();
-    //     rightRelativeMovementVector.Normalize();
-
-    //     Vector3 forwardCam = moveInput.y * forwardRelativeMovementVector;
-    //     Vector3 rightCam = moveInput.x * rightRelativeMovementVector;
-
-    //     Vector3 cameraRelativeMovement = forwardCam + rightCam;
-
-    //     transform.Translate(cameraRelativeMovement / Space.World);
-
-    // }
 
     private void CheckForColliders()
     {
@@ -126,20 +98,12 @@ public class PlayerController : MonoBehaviour
 
         if (numHits > 0)
         {
-<<<<<<< Updated upstream
             Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
 
             for (int i = 0; i < numHits;i++)
             {
                 Debug.Log(hits[i].collider.gameObject.name + " was hit!");
             }
-=======
-            Debug.Log("Collided with Enemy");
-            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-            return;
->>>>>>> Stashed changes
         }
     }
 
