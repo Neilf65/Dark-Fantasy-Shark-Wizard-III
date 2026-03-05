@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text finalTimeText;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private Timer timer;
-     [SerializeField] private AttemptManager attemptManager;
+    [SerializeField] private AttemptManager attemptManager;
 
     private void Awake()
     {
@@ -42,11 +42,11 @@ public class GameManager : MonoBehaviour
     }
     public void ReplayWin()
     {
+        AttemptManager.Instance.ResetAttempts();
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Current Scene Index: " + currentIndex);
 
         SceneManager.LoadScene(currentIndex);
-        attemptManager.ResetAttempts();
     }
 
 }

@@ -21,6 +21,7 @@ public class AttemptManager : MonoBehaviour
 
     void Start()
     {
+        attemptCounterText = FindObjectOfType<TMPro.TextMeshProUGUI>();
         UpdateAttemptText();
     }
 
@@ -39,5 +40,6 @@ public class AttemptManager : MonoBehaviour
         public void ResetAttempts()
         {
             attempts = 0;
+            UpdateAttemptText();
         }
 }

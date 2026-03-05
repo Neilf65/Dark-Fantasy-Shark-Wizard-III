@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         attemptManager = FindObjectOfType<AttemptManager>();
 
+
         if (attemptManager == null)
         {
             Debug.LogError("AttemptManager not found in scene!");
