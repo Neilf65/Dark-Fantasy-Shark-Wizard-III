@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -98,12 +99,9 @@ public class PlayerController : MonoBehaviour
 
         if (numHits > 0)
         {
-            Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
-
-            for (int i = 0; i < numHits;i++)
-            {
-                Debug.Log(hits[i].collider.gameObject.name + " was hit!");
-            }
+            Debug.Log("Collided with Enemy");
+            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
