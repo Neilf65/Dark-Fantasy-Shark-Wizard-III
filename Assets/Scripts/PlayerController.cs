@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
 
-        // ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
     }
 
@@ -56,10 +55,6 @@ public class PlayerController : MonoBehaviour
         }    
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        //Physics.Raycast(ray, out)
-    }
 
     void Update()
     {
@@ -100,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (numHits > 0)
         {
             Debug.Log("Collided with Enemy");
-            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
+            EnemyMovement enemy = gameObject.GetComponent<EnemyMovement>();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
