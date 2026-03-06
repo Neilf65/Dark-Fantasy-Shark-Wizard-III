@@ -113,6 +113,16 @@ public class PlayerController : MonoBehaviour
             EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
 
             attemptManager?.IncrementAttempts();
+        }
+        if (other.CompareTag("Trap"))
+        {
+            isDead = true;
+
+            LoseManager.manager.Lose();
+
+            Debug.Log("Collided with Trap");
+
+            attemptManager?.IncrementAttempts();
 
         }
     }

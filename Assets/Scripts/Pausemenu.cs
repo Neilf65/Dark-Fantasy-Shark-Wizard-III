@@ -4,14 +4,28 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Pausemenu : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject firstButton;
+    private PlayerControls controls;
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
 
+    void Awake()
+    {
+        controls = new PlayerControls();
+    }
+    void OnEnable()
+    {
+        controls.Land.Enable();
+    }
 
+    void OnDisable()
+    {
+        controls.Land.Disable();
+    }
     void Start()
     {
         // HARD RESET on play
@@ -25,12 +39,14 @@ public class Pausemenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !LoseManager.isGameOver)
+        if (controls.Land.Pause.triggered)
         {
-            if (isPaused)
-                ResumeGame();
-            else
-                PauseGame();
+            Debug.Log("Pause button pressed!");
+            if (!LoseManager.isGameOver)
+            {
+                if (isPaused) ResumeGame();
+                else PauseGame();
+            }
         }
     }
 
@@ -42,6 +58,7 @@ public class Pausemenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        EventSystem.current.SetSelectedGameObject(firstButton);
     }
 
         
