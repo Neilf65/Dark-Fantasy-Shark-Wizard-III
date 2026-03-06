@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     {
         AttemptManager.Instance.ResetAttempts();
         SceneManager.LoadScene(1);
+
     }
     public void QuitGame()
     {

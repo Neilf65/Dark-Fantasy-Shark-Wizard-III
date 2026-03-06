@@ -1,6 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winScreen;
     [SerializeField] private Timer timer;
     [SerializeField] private AttemptManager attemptManager;
+    [SerializeField] private Button firstButton;
+
 
     private void Awake()
     {
@@ -39,6 +44,19 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        StartCoroutine(SelectFirstButtonCoroutine());
+    }
+    private IEnumerator SelectFirstButtonCoroutine()
+    {
+        // Wait two frames to ensure UI is active
+        yield return null;
+        yield return null;
+
+        if (EventSystem.current != null && firstButton != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+        }
     }
     public void ReplayWin()
     {

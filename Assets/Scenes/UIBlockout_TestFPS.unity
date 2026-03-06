@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &123945417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1219291643343705030, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1001 &137800107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,7 +439,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 68670c6f2e64cda44a4ffa674ef80751, type: 3}
   m_PointAction: {fileID: -6867609689604358254, guid: 68670c6f2e64cda44a4ffa674ef80751, type: 3}
   m_MoveAction: {fileID: -7973179768679209848, guid: 68670c6f2e64cda44a4ffa674ef80751, type: 3}
-  m_SubmitAction: {fileID: -1712680198703532546, guid: 68670c6f2e64cda44a4ffa674ef80751, type: 3}
+  m_SubmitAction: {fileID: 7713562447558256985, guid: 68670c6f2e64cda44a4ffa674ef80751, type: 3}
   m_CancelAction: {fileID: 0}
   m_LeftClickAction: {fileID: -1712680198703532546, guid: 68670c6f2e64cda44a4ffa674ef80751, type: 3}
   m_MiddleClickAction: {fileID: 0}
@@ -461,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 2003167351}
+  m_FirstSelected: {fileID: 814646713}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &154802944
@@ -491,6 +493,8 @@ GameObject:
   - component: {fileID: 163779366}
   - component: {fileID: 163779365}
   - component: {fileID: 163779364}
+  - component: {fileID: 163779369}
+  - component: {fileID: 163779368}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -585,6 +589,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &163779368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163779363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d2f27fa41edf048995253b147a8515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightFix
+--- !u!114 &163779369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163779363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a98125502f715b4b83cfb77b434e436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Selectable
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
 --- !u!1 &182285292 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6414710328966167505, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -603,6 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &227091246
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &379390938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,6 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &494131009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5605423509831903225, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -1524,6 +1584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &566608041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,10 +1649,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 814646716}
+    m_SelectOnDown: {fileID: 1771040218}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -1977,6 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &730161773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &787804196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5709257684240326241, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -2088,6 +2151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &814646713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,10 +2216,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1917286227}
+    m_SelectOnDown: {fileID: 566608045}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -2642,6 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &964138198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8038136298150083401, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -2660,6 +2725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1015334389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2061201802751852271, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -2678,6 +2744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1001 &1018930882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3071,6 +3138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1078564628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +3407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!4 &1092269576
 Transform:
   m_ObjectHideFlags: 0
@@ -3589,6 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1183961724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,24 +3688,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32e21e7fdce38d49a71d8b1a51d6795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pausemenu
-  firstButton: {fileID: 0}
   pauseMenu: {fileID: 163779363}
---- !u!4 &1183961726
-Transform:
+  firstButton: {fileID: 814646713}
+--- !u!224 &1183961726
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183961724}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1070.31, y: 625.26654, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 163779367}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1070.31, y: 625.26654}
+  m_SizeDelta: {x: 100, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1198421458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4035,6 +4109,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Trap
       objectReference: {fileID: 0}
+    - target: {fileID: 6924065025396604303, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6983621921936136799, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
       propertyPath: m_TagString
       value: Trap
@@ -4094,6 +4172,10 @@ PrefabInstance:
     - target: {fileID: 8895603959969860706, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
       propertyPath: m_TagString
       value: Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960211805839977158, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8960211805839977158, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
       propertyPath: m_TagString
@@ -4219,6 +4301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1433441677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,6 +4433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1486463038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,6 +4521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1567016681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4788,6 +4873,7 @@ MonoBehaviour:
   winScreen: {fileID: 1643580747}
   timer: {fileID: 401445458}
   attemptManager: {fileID: 1875716788}
+  firstButton: {fileID: 1198421460}
 --- !u!4 &1643580749
 Transform:
   m_ObjectHideFlags: 0
@@ -4970,7 +5056,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5006,6 +5092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1731174297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5206,10 +5293,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 566608045}
+    m_SelectOnDown: {fileID: 1917286227}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -5408,6 +5495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &1814455389
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!4 &1915792946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8998584037759787997, guid: 3c7f84d69568a5341898e4bde28b6043, type: 3}
@@ -5608,10 +5697,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1771040218}
+    m_SelectOnDown: {fileID: 814646716}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -5707,6 +5796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &2003167351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,7 +5848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -5857,6 +5947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!1 &2042272015
 GameObject:
   m_ObjectHideFlags: 0
@@ -5950,6 +6041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   LoseScreen: {fileID: 1567016681}
+  firstButton: {fileID: 2003167353}
 --- !u!4 &2106587617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8635430750292699329, guid: 257f5ffaf8b5d9b4ea60b6420a960777, type: 3}
@@ -6130,10 +6222,10 @@ SceneRoots:
   - {fileID: 1018930882}
   - {fileID: 154802944}
   - {fileID: 1875716789}
-  - {fileID: 1183961726}
   - {fileID: 401445462}
   - {fileID: 1116023610}
   - {fileID: 1772727892}
   - {fileID: 1567016685}
   - {fileID: 1092269576}
   - {fileID: 1643580749}
+  - {fileID: 1183961726}

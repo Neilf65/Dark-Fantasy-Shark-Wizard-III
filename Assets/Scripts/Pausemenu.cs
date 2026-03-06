@@ -1,36 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Pausemenu : MonoBehaviour
 {
-    [SerializeField] private GameObject firstButton;
-    private PlayerControls controls;
+    [Header("UI References")]
     [SerializeField] private GameObject pauseMenu;
-    private bool isPaused;
+    [SerializeField] private GameObject firstButton;
+
+    private PlayerControls controls;
+    private bool isPaused = false;
+    private bool pauseRequested = false;
 
     void Awake()
     {
         controls = new PlayerControls();
     }
+
     void OnEnable()
     {
         controls.Land.Enable();
+        controls.Land.Pause.performed += OnPausePerformed;
     }
 
     void OnDisable()
     {
+     
         controls.Land.Disable();
+        controls.Land.Pause.performed -= OnPausePerformed;
     }
+
+    private void OnPausePerformed(InputAction.CallbackContext ctx)
+    {
+        // Safe: set flag, do NOT modify UI here
+        pauseRequested = true;
+    }
+
     void Start()
     {
-        // HARD RESET on play
         Time.timeScale = 1f;
-        isPaused = false;
         pauseMenu.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -39,15 +50,23 @@ public class Pausemenu : MonoBehaviour
 
     void Update()
     {
-        if (controls.Land.Pause.triggered)
+        if (pauseRequested)
         {
-            Debug.Log("Pause button pressed!");
+            pauseRequested = false;
+
             if (!LoseManager.isGameOver)
             {
-                if (isPaused) ResumeGame();
-                else PauseGame();
+                TogglePause();
             }
         }
+    }
+
+    private void TogglePause()
+    {
+        if (isPaused)
+            ResumeGame();
+        else
+            PauseGame();
     }
 
     public void PauseGame()
@@ -58,11 +77,17 @@ public class Pausemenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        EventSystem.current.SetSelectedGameObject(firstButton);
+
+        // Select first button for controller
+        StartCoroutine(SelectFirstButtonCoroutine());
     }
 
-        
- 
+    private IEnumerator SelectFirstButtonCoroutine()
+    {
+        yield return null; // wait one frame for UI to activate
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButton);
+    }
 
     public void ResumeGame()
     {
@@ -76,17 +101,18 @@ public class Pausemenu : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
     }
+
     public void ReturnToTitle()
-     {
-        Time.timeScale = 0f;
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
+
     public void QuitPauseMenu()
     {
         Application.Quit();
     }
-
 }
