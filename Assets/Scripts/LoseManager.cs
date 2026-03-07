@@ -1,31 +1,25 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
-
-
 
 public class LoseManager : MonoBehaviour
 {
     public static LoseManager manager;
-
     public static bool isGameOver;
 
-    [SerializeField] private GameObject LoseScreen;
-    [SerializeField] private Button firstButton;
+    [SerializeField] private GameObject loseScreen;
+    [SerializeField] private Button replayButton;
+    [SerializeField] private Button returnButton;
+    [SerializeField] private Button quitButton;
 
     private void Awake()
     {
         manager = this;
         isGameOver = false;
+        loseScreen.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    private void Start()
-    {
-        LoseScreen.SetActive(false);
     }
 
     public void Lose()
@@ -33,36 +27,41 @@ public class LoseManager : MonoBehaviour
         if (isGameOver) return;
 
         isGameOver = true;
-        LoseScreen.SetActive(true);
+        loseScreen.SetActive(true);
         Time.timeScale = 0f;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        StartCoroutine(SelectFirstButtonCoroutine());
-    }
-    private IEnumerator SelectFirstButtonCoroutine()
-    {
-        // Wait two frames to ensure UI is active
-        yield return null;
-        yield return null;
 
-        if (EventSystem.current != null && firstButton != null)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
-        }
+        StartCoroutine(SelectDefaultButtonCoroutine());
     }
+
+    private IEnumerator SelectDefaultButtonCoroutine()
+    {
+        yield return null;
+        if (EventSystem.current != null)
+            EventSystem.current.SetSelectedGameObject(null);
+
+       
+        if (replayButton != null)
+            replayButton.Select();
+    }
+
     public void ReplayGame()
     {
-        Debug.Log("Replay pressed");
-
         Time.timeScale = 1f;
         isGameOver = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
-
-        int currentIndex = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("Current Scene Index: " + currentIndex);
-
-        SceneManager.LoadScene(currentIndex);
-
+    public void ReturnToTitle()
+    {
+        Time.timeScale = 1f;
+        isGameOver = false;
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void QuitLose()
+    {
+        Application.Quit();
     }
 }
