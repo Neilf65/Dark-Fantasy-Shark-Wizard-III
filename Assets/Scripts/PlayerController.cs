@@ -133,30 +133,17 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (isDead) return;
+        if (isDead || LoseManager.isGameOver) return;
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Trap"))
         {
             isDead = true;
 
             LoseManager.manager.Lose();
 
-            Debug.Log("Collided with Enemy");
-            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
-
-            attemptManager?.IncrementAttempts();
-        }
-        if (other.CompareTag("Trap"))
-        {
-            isDead = true;
-
-            LoseManager.manager.Lose();
-
-            Debug.Log("Collided with Trap");
-
             attemptManager?.IncrementAttempts();
 
+            Debug.Log("Player died");
         }
-
     }
 }

@@ -30,13 +30,14 @@ public class LoseManager : MonoBehaviour
 
     public void Lose()
     {
+        if (isGameOver) return;
+
         isGameOver = true;
         LoseScreen.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         StartCoroutine(SelectFirstButtonCoroutine());
-
     }
     private IEnumerator SelectFirstButtonCoroutine()
     {

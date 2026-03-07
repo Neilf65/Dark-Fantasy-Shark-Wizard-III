@@ -48,15 +48,35 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator SelectFirstButtonCoroutine()
     {
-        // Wait two frames to ensure UI is active
+        // Wait a few frames to let UI activate
+        yield return null;
         yield return null;
         yield return null;
 
-        if (EventSystem.current != null && firstButton != null)
+        // Ensure EventSystem exists
+        if (EventSystem.current == null)
         {
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+            Debug.LogError("No EventSystem found in the scene!");
+            yield break;
         }
+
+        if (firstButton == null)
+        {
+            Debug.LogError("First button is not assigned!");
+            yield break;
+        }
+
+        
+        firstButton.interactable = true;
+
+        
+        EventSystem.current.SetSelectedGameObject(null);
+
+        
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+
+        
+        firstButton.OnSelect(null);
     }
     public void ReplayWin()
     {
@@ -66,6 +86,9 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(currentIndex);
     }
-
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
 
