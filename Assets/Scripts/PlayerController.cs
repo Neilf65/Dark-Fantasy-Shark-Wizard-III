@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float keysCollected = 0;
     
     public LayerMask interactableLayerMask;
+    public FootstepManager footstepManager;
 
     [SerializeField] private Transform cameraTransform;
 
@@ -33,8 +34,6 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
-
-
     }
 
     // Read movement inputs
@@ -42,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
         Debug.Log($"Move Input: {moveInput}");
+        footstepManager.Footstep();
     }
 
     // Jump if player can jump
@@ -83,8 +83,6 @@ public class PlayerController : MonoBehaviour
         // Apply Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-
     }
 
 
