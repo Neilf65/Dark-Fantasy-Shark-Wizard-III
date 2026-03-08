@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeepRoof
       objectReference: {fileID: 0}
+    - target: {fileID: 1077416652759172516, guid: b667072ecd5a257499011bc4006f881f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1622722674971349192, guid: b667072ecd5a257499011bc4006f881f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
