@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class AttemptManager : MonoBehaviour
 {
     public static AttemptManager Instance;
 
     private int attempts = 0;
-    [SerializeField] private TMPro.TextMeshProUGUI attemptCounterText;
+    private TextMeshProUGUI attemptCounterText;
 
     void Awake()
     {
@@ -19,9 +21,9 @@ public class AttemptManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    public void RegisterText(TextMeshProUGUI text)
     {
-        attemptCounterText = FindObjectOfType<TMPro.TextMeshProUGUI>();
+        attemptCounterText = text;
         UpdateAttemptText();
     }
 
@@ -31,15 +33,17 @@ public class AttemptManager : MonoBehaviour
         UpdateAttemptText();
     }
 
-    private void UpdateAttemptText()
+    public void ResetAttempts()
     {
-        attemptCounterText.text = $"Attempts: {attempts}";
+        attempts = 0;
+        UpdateAttemptText();
     }
 
-    // Add this method to reset attempts
-        public void ResetAttempts()
+    private void UpdateAttemptText()
+    {
+        if (attemptCounterText != null)
         {
-            attempts = 0;
-            UpdateAttemptText();
+            attemptCounterText.text = $"Attempts: {attempts}";
         }
+    }
 }
