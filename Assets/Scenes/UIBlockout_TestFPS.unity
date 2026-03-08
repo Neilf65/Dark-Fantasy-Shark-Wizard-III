@@ -835,7 +835,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 2003167353}
-    m_SelectOnDown: {fileID: 330163902}
+    m_SelectOnDown: {fileID: 1253241136}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -3821,10 +3821,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 330163902}
-    m_SelectOnDown: {fileID: 2003167353}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
@@ -5953,7 +5953,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 2003167353}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 330163902}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
