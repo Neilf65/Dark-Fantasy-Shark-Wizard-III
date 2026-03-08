@@ -7,7 +7,7 @@ public class AttemptManager : MonoBehaviour
     public static AttemptManager Instance;
 
     private int attempts = 0;
-    private TextMeshProUGUI attemptCounterText;
+    [SerializeField] private TextMeshProUGUI attemptCounterText;
 
     void Awake()
     {
@@ -19,11 +19,19 @@ public class AttemptManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void RegisterText(TextMeshProUGUI text)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        attemptCounterText = text;
+        
+        if (scene.name == "MainMenu")
+        {
+            ResetAttempts();
+        }
+
+        
         UpdateAttemptText();
     }
 

@@ -10,6 +10,7 @@ public class Pausemenu : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject firstButton;
+    [SerializeField] private AudioSource music;
 
     private PlayerControls controls;
     private bool isPaused = false;
@@ -80,6 +81,7 @@ public class Pausemenu : MonoBehaviour
 
         // Select first button for controller
         StartCoroutine(SelectFirstButtonCoroutine());
+        music.Pause();
     }
 
     private IEnumerator SelectFirstButtonCoroutine()
@@ -97,6 +99,7 @@ public class Pausemenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        music.UnPause();
     }
 
     public void RestartGame()
@@ -109,6 +112,7 @@ public class Pausemenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+
     }
 
     public void QuitPauseMenu()

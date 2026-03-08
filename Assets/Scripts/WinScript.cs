@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         StartCoroutine(SelectFirstButtonCoroutine());
+        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
+        {
+            audio.Stop();
+        }
     }
     private IEnumerator SelectFirstButtonCoroutine()
     {

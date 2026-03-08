@@ -13,6 +13,7 @@ public class LoseManager : MonoBehaviour
     [SerializeField] private Button replayButton;
     [SerializeField] private Button returnButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private AudioSource music;
 
     private void Awake()
     {
@@ -32,6 +33,10 @@ public class LoseManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
+        {
+            audio.Stop();
+        }
 
         StartCoroutine(SelectDefaultButtonCoroutine());
     }
