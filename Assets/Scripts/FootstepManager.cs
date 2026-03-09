@@ -46,6 +46,15 @@ public class FootstepManager : MonoBehaviour
         AudioSource.pitch = Random.Range(0.8f, 1f);
         AudioSource.PlayOneShot(clip);
     }
+    // Get floor tag
+    public string FloorTag()
+    {
+        if (Physics.Raycast(RayStart.position, RayStart.transform.up * -1, out hit, range))
+        {
+            return hit.collider.tag;
+        }
+        else { return null; }
+    }
     // Draw debug raycast
     private void Update()
     {

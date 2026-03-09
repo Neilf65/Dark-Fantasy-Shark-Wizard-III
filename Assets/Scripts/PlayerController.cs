@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 camRotation;
     private bool ShouldFaceMoveDirection;
     private float footstepTimer = 6f;
+    private string floorTag;
 
     RaycastHit[] hits = new RaycastHit[4];
     Ray ray;
@@ -83,11 +84,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Play footsteps while the player's moving
-        if ((moveInput.y > 0f) || (moveInput.x > 0f))
+        if ((Math.Abs(moveInput.y) > 0f) || (Math.Abs(moveInput.x) > 0f))
         {
             if (controller.isGrounded)
             {
-                print(footstepTimer);
                 if (footstepTimer >= footstepInterval / 2)
                 {
                     footstepTimer = 0f;
@@ -103,8 +103,17 @@ public class PlayerController : MonoBehaviour
             footstepTimer = footstepInterval;
         }
 
-            // Apply Gravity
-            velocity.y += gravity * Time.deltaTime;
+        // Reset footsteps when floor changes
+        if (floorTag != footstepManager.FloorTag())
+        {
+            floorTag = footstepManager.FloorTag();
+            footstepManager.FootstepStop();
+            footstepTimer = footstepInterval;
+            print("Reset footsteps");
+        }
+
+        // Apply Gravity
+        velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
