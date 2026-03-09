@@ -73,12 +73,4 @@ public class EnemyMovement : MonoBehaviour
     {
         Agent.SetDestination(Target.position);
     }   
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
 }

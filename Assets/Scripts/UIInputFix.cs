@@ -4,22 +4,23 @@ using UnityEngine.EventSystems;
 
 
 [RequireComponent(typeof(Selectable))]
-public class HighlightFix : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDeselectHandler
+public class UIInputFix : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDeselectHandler
 {
     GameObject lastSelectedGameObject;
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!EventSystem.current.alreadySelecting)
+        if (EventSystem.current != null)
         {
-            EventSystem.current.SetSelectedGameObject(this.gameObject);
-            lastSelectedGameObject = this.gameObject;
+            EventSystem.current.SetSelectedGameObject(gameObject);
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        EventSystem.current.SetSelectedGameObject(lastSelectedGameObject);
-        lastSelectedGameObject = this.gameObject;
+        if (EventSystem.current != null && lastSelectedGameObject != null)
+        {
+            EventSystem.current.SetSelectedGameObject(lastSelectedGameObject);
+        }
     }
 
     public void OnDeselect(BaseEventData eventData)
@@ -27,3 +28,4 @@ public class HighlightFix : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         this.GetComponent<Selectable>().OnPointerExit(null);
     }
 }
+

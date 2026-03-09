@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-public class UIButtonHoverSelect : MonoBehaviour, IPointerEnterHandler
+public class HoverFixPauseMenu : MonoBehaviour
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
