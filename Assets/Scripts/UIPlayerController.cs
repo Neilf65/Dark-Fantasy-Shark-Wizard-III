@@ -3,14 +3,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-
-public class PlayerController : MonoBehaviour
+public class UIPlayerController : MonoBehaviour
 {
     private AttemptManager attemptManager;
     [SerializeField] private float moveSpeed = 0.05f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.0f;
-    private float keysCollected = 0;
 
     private float interactRange = 2;
     public LayerMask interactableLayerMask;
@@ -42,7 +40,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         attemptManager = FindObjectOfType<AttemptManager>();
-
 
         if (attemptManager == null)
         {
@@ -98,52 +95,25 @@ public class PlayerController : MonoBehaviour
 
 
     }
-    private void CheckForColliders()
-    {
-        int numHits = Physics.RaycastNonAlloc(ray, hits);
-
-        if (numHits > 0)
-        {
-            foreach (var hit in hits)
-            {
-                if (hit.collider != null && hit.collider.CompareTag("Enemy"))
-                {
-                    Debug.Log("Collided with Enemy");
-                    // Do NOT reload scene here
-                    LoseManager.manager.Lose();
-                    attemptManager?.IncrementAttempts();
-                }
-            }
-        }
-    }
-
-    public void CollectKey(GameObject Key)
-    {
-        keysCollected += 1;
-        Debug.Log($"Collected a key! Total keys: {keysCollected}");
-        Destroy(Key);
-    }
-
-    public void CollectStunItem(GameObject StunItem)
-    {
-        Debug.Log("Collected a stun item!");
-        Destroy(StunItem);
-    }
     private bool isDead = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (isDead || LoseManager.isGameOver) return;
+        if (isDead) return;
 
-        if (other.CompareTag("Enemy") || other.CompareTag("Trap"))
+        if (other.CompareTag("Enemy"))
         {
             isDead = true;
 
             LoseManager.manager.Lose();
 
+            Debug.Log("Collided with Enemy");
+            EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
+
             attemptManager?.IncrementAttempts();
 
-            Debug.Log("Player died");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
+

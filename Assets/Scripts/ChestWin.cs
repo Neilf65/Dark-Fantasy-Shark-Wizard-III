@@ -7,7 +7,7 @@ public class ChestWin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.manager.Win();
         }
     }
 }
