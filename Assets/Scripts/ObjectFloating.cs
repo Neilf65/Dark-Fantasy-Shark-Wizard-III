@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UIElements;
 
-public class KeyCollectible : MonoBehaviour
+public class ObjectFloating : MonoBehaviour
 
 
 
@@ -14,11 +14,6 @@ public class KeyCollectible : MonoBehaviour
     [SerializeField] private float length;
     PlayerController _player;
 
-    void Start()
-    {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -29,14 +24,6 @@ public class KeyCollectible : MonoBehaviour
 
         float PositionPingPongY = (Mathf.PingPong(Time.time, length) - length / 2) / slowMultiplier;; 
         transform.Translate(new Vector3(0, PositionPingPongY, 0));
-
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        //Destroy Collectible
-        Debug.Log("Collided with the key collectible");
-        _player.CollectKey(gameObject);
 
     }
 }
