@@ -18,8 +18,10 @@ public class FootstepManager : MonoBehaviour
     // Get tag of surface
     public void Footstep()
     {
-        if(Physics.Raycast(RayStart.position, RayStart.transform.up * -1, out hit, range, layerMask))
+        print("stepping!");
+        if(Physics.Raycast(RayStart.position, RayStart.transform.up * -1, out hit, range))
         {
+            print(hit.collider.tag);
             if (hit.collider.CompareTag("matSand"))
             {
                 PlayFootstepSoundL(sand);
@@ -33,6 +35,10 @@ public class FootstepManager : MonoBehaviour
                 PlayFootstepSoundL(stone);
             }
         }
+    }
+    public void FootstepStop()
+    {
+        AudioSource.Stop();
     }
     // Play footstep sound
     void PlayFootstepSoundL(AudioClip clip)

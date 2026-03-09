@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     
     public LayerMask interactableLayerMask;
     public FootstepManager footstepManager;
+    public float footstepInterval = 6f;
 
     [SerializeField] private Transform cameraTransform;
 
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private Vector2 camRotation;
     private bool ShouldFaceMoveDirection;
+    private float footstepTimer = 6f;
 
     RaycastHit[] hits = new RaycastHit[4];
     Ray ray;
@@ -41,7 +44,6 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
         Debug.Log($"Move Input: {moveInput}");
-        footstepManager.Footstep();
     }
 
     // Jump if player can jump
@@ -80,11 +82,31 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
         }
 
-        // Apply Gravity
-        velocity.y += gravity * Time.deltaTime;
+        // Play footsteps while the player's moving
+        if ((moveInput.y > 0f) || (moveInput.x > 0f))
+        {
+            if (controller.isGrounded)
+            {
+                print(footstepTimer);
+                if (footstepTimer >= footstepInterval / 2)
+                {
+                    footstepTimer = 0f;
+                    footstepManager.Footstep();
+                }
+                footstepTimer += 1f * Time.deltaTime;
+                
+            }
+        }
+        else
+        {
+            footstepManager.FootstepStop();
+            footstepTimer = footstepInterval;
+        }
+
+            // Apply Gravity
+            velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
 
     private void CheckForColliders()
     {
