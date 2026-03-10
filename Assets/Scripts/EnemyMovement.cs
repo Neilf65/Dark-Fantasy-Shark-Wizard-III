@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public float UpdateSpeed = 0.1f;
     public float walkPointRange;
     public float sightRange;
+    [SerializeField] private float walkTime;
 
     // Booleans
     bool walkPointSet;
@@ -40,12 +41,14 @@ public class EnemyMovement : MonoBehaviour
         if (!playerInSightRange) Patrolling();
         if (playerInSightRange) ChasePlayer();
 
-
+        walkTime += Time.deltaTime;
     }
 
     private void Patrolling()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        if (!walkPointSet || walkTime >= 4.0f) 
+        SearchWalkPoint();
+
 
         if (walkPointSet)
             Agent.SetDestination(walkPoint);
@@ -55,6 +58,8 @@ public class EnemyMovement : MonoBehaviour
         // Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
+        
+        walkTime = 0f;
     }
 
     private void SearchWalkPoint()
