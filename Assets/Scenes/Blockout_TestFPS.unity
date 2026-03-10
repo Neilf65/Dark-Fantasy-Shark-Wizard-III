@@ -477,11 +477,6 @@ MonoBehaviour:
   returnButton: {fileID: 1223708247}
   quitButton: {fileID: 444414131}
   music: {fileID: 0}
---- !u!4 &39785576 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 464090441304752331, guid: f361f22cd38d5434bb501830a63588fb, type: 3}
-  m_PrefabInstance: {fileID: 957834890}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &52741761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,7 +2664,6 @@ GameObject:
   - component: {fileID: 165177999}
   - component: {fileID: 165178001}
   - component: {fileID: 165177997}
-  - component: {fileID: 165178002}
   m_Layer: 5
   m_Name: replay
   m_TagString: Untagged
@@ -9741,8 +9735,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 810914739758080475, guid: 46d44aa0bfc870d429f72442a67a3b4d, type: 3}
   m_PrefabInstance: {fileID: 167603909}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &590469692
-MeshCollider:
+--- !u!65 &590469692
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9759,10 +9753,9 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4244013630626741775, guid: e795a551c581ff84d9d4dd2ef2b8c326, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 161.27396, y: 83.665215, z: 117.78818}
+  m_Center: {x: 0.000015258789, y: -0.000030517578, z: 0}
 --- !u!4 &595678404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2384891753384742639, guid: 8f28727b18fa9454ca8901cef864b895, type: 3}
@@ -29841,7 +29834,6 @@ Transform:
   - {fileID: 358250552}
   - {fileID: 1938216276}
   - {fileID: 1079520542}
-  - {fileID: 39785576}
   - {fileID: 75956380}
   - {fileID: 1606182754}
   - {fileID: 1892257200}
