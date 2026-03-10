@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Item
   - Key
+  - matSand
+  - matWood
+  - matStone
   layers:
   - Default
   - TransparentFX
