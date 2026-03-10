@@ -9,6 +9,7 @@ public class LoseManager : MonoBehaviour
     public static LoseManager manager;
     public static bool isGameOver;
 
+
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private Button replayButton;
     [SerializeField] private Button returnButton;
@@ -33,11 +34,6 @@ public class LoseManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
-        {
-            audio.Stop();
-        }
-
         StartCoroutine(SelectDefaultButtonCoroutine());
     }
 

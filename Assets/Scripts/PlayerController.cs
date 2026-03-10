@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
         if (isDead || LoseManager.isGameOver) return;
 
         if (other.CompareTag("Enemy"))
-            if (other.CompareTag("Enemy") || other.CompareTag("Trap"))
+            if (other.CompareTag("Enemy"))
             {
                 isDead = true;
 

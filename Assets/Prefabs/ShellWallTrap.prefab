@@ -109,33 +109,8 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6404090335223974646}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
---- !u!1 &3782731927371024563 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 2410149326840272971}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6404090335223974646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3782731927371024563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!4 &4554588422308286985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
@@ -210,33 +185,8 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8510026693784722480}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
---- !u!1 &2869195609226717059 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 3665097328519100283}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8510026693784722480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2869195609226717059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!4 &3214090848113392953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
@@ -311,38 +261,13 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 785654702057627875}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
 --- !u!4 &2791694420570797744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
   m_PrefabInstance: {fileID: 4105492074415209714}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3311772884296248330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 4105492074415209714}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &785654702057627875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311772884296248330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!1001 &4507667352365143250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,38 +337,13 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2297777110557857773}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
 --- !u!4 &2362638908998901392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
   m_PrefabInstance: {fileID: 4507667352365143250}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3135093843474842666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 4507667352365143250}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2297777110557857773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3135093843474842666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!1001 &4630491721903778926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,33 +413,8 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2704389238697032845}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
---- !u!1 &6147038688656931990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 4630491721903778926}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2704389238697032845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6147038688656931990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!4 &6774957222830728748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
@@ -614,33 +489,8 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1823765231397326613}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
---- !u!1 &4947515278636035352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 5883247304615902688}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1823765231397326613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4947515278636035352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!4 &5756385659981625250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
@@ -715,33 +565,8 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3018837052090784104}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
---- !u!1 &8539597977468866056 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 7173912821936266992}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3018837052090784104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8539597977468866056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!4 &9063898532017951922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
@@ -816,33 +641,8 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8609668431724371046}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
---- !u!1 &8209057588857437942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 7268821671176236558}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8609668431724371046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209057588857437942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
 --- !u!4 &8838242588631901260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
@@ -917,35 +717,10 @@ PrefabInstance:
     - {fileID: -3279037637634411508, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4402997819016504415}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
 --- !u!4 &7281892950699699756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2181910468929309250, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
   m_PrefabInstance: {fileID: 8883859391935980654}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7945945830380287126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
-  m_PrefabInstance: {fileID: 8883859391935980654}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4402997819016504415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7945945830380287126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d79560aaff341f408ee936a802cc166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoseManager
-  loseScreen: {fileID: 0}
-  replayButton: {fileID: 0}
-  returnButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  music: {fileID: 0}
