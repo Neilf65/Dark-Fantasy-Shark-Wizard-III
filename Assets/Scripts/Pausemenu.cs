@@ -13,6 +13,7 @@ public class Pausemenu : MonoBehaviour
     [SerializeField] private AudioSource music;
 
     private PlayerControls controls;
+    private AttemptManager attemptManager;
     private bool isPaused = false;
     private bool pauseRequested = false;
 
@@ -42,6 +43,8 @@ public class Pausemenu : MonoBehaviour
 
     void Start()
     {
+        attemptManager = FindObjectOfType<AttemptManager>();
+
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
 
@@ -106,6 +109,8 @@ public class Pausemenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        attemptManager?.IncrementAttempts();
     }
 
     public void ReturnToTitle()

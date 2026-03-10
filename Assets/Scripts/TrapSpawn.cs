@@ -8,7 +8,7 @@ public class TrapSpawn : MonoBehaviour
     // GameObjects
     public GameObject spikeShell;
     private float spawnTimer = 2.0f; 
-    private float cooldownTimer = 3.0f;
+
     
     PlayerController _player;
 
