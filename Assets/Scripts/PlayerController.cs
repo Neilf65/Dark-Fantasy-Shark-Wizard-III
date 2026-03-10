@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
+    private AttemptManager attemptManager;
     [SerializeField] private float moveSpeed = 0.05f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.0f;
@@ -38,6 +38,12 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        attemptManager = FindObjectOfType<AttemptManager>();
+
+        if (attemptManager == null)
+        {
+            Debug.LogError("AttemptManager not found in scene!");
+        }
     }
 
     // Read movement inputs
@@ -124,8 +130,9 @@ public class PlayerController : MonoBehaviour
         if (numHits > 0)
         {
             Debug.Log("Collided with Enemy");
-            EnemyMovement enemy = gameObject.GetComponent<EnemyMovement>();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LoseManager.manager.Lose();
+            attemptManager?.IncrementAttempts();
+
         }
     }
 
@@ -140,5 +147,37 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Collected a stun item!");
         Destroy(StunItem);
+    }
+    private bool isDead = false;
+    void OnTriggerEnter(Collider other)
+    {
+        if (isDead) return;
+        if (isDead || LoseManager.isGameOver) return;
+
+        if (other.CompareTag("Enemy"))
+            if (other.CompareTag("Enemy") || other.CompareTag("Trap"))
+            {
+                isDead = true;
+
+                LoseManager.manager.Lose();
+
+                Debug.Log("Collided with Enemy");
+                EnemyMovement enemy = other.gameObject.GetComponent<EnemyMovement>();
+
+                attemptManager?.IncrementAttempts();
+            }
+        if (other.CompareTag("Trap"))
+        {
+            isDead = true;
+
+            LoseManager.manager.Lose();
+
+            Debug.Log("Collided with Trap");
+
+            attemptManager?.IncrementAttempts();
+
+            Debug.Log("Player died");
+        }
+
     }
 }
