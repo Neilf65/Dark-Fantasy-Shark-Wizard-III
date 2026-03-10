@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathSpike : MonoBehaviour
 {
-    private float despawnTimer;
+    [SerializeField] private float despawnTimer;
     public bool isSpawned;
 
     void Start()
@@ -21,15 +21,6 @@ public class DeathSpike : MonoBehaviour
         if (despawnTimer < 0.01f)
         {
             Destroy(gameObject);
-        }
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player has hit the spike");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
