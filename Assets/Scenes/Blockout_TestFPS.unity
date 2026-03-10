@@ -7361,7 +7361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 810914739758080475, guid: 46d44aa0bfc870d429f72442a67a3b4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13
+      value: -0.626
       objectReference: {fileID: 0}
     - target: {fileID: 810914739758080475, guid: 46d44aa0bfc870d429f72442a67a3b4d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7369,7 +7369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 810914739758080475, guid: 46d44aa0bfc870d429f72442a67a3b4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.2
+      value: -0.822
       objectReference: {fileID: 0}
     - target: {fileID: 810914739758080475, guid: 46d44aa0bfc870d429f72442a67a3b4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7813,6 +7813,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matWood
       objectReference: {fileID: 0}
+    - target: {fileID: 39690353375274214, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7270005
+      objectReference: {fileID: 0}
     - target: {fileID: 46771169491391608, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -8065,6 +8069,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 378191049977004720, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5160005
+      objectReference: {fileID: 0}
     - target: {fileID: 379721685707759541, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
@@ -8248,6 +8256,10 @@ PrefabInstance:
     - target: {fileID: 517366029333384609, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 519013317154306979, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5160005
       objectReference: {fileID: 0}
     - target: {fileID: 523008230125414314, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -9004,6 +9016,10 @@ PrefabInstance:
     - target: {fileID: 1366849423443400023, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367906288066177408, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7320009
       objectReference: {fileID: 0}
     - target: {fileID: 1373665859613660748, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -10129,6 +10145,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matWood
       objectReference: {fileID: 0}
+    - target: {fileID: 2560331089467186378, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.010000229
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561215645880285909, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73200047
+      objectReference: {fileID: 0}
     - target: {fileID: 2566610425781854524, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -10825,6 +10849,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matWood
       objectReference: {fileID: 0}
+    - target: {fileID: 3287829752824759129, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.010000229
+      objectReference: {fileID: 0}
     - target: {fileID: 3288374782041603202, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
@@ -11161,6 +11189,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 3686003502945815547, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7320009
+      objectReference: {fileID: 0}
     - target: {fileID: 3689712341388608222, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
@@ -11272,6 +11304,10 @@ PrefabInstance:
     - target: {fileID: 3809225228143066393, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825038176073055758, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32999992
       objectReference: {fileID: 0}
     - target: {fileID: 3825565447650053832, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -11500,6 +11536,10 @@ PrefabInstance:
     - target: {fileID: 4055385442079079475, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061976273864462060, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7320009
       objectReference: {fileID: 0}
     - target: {fileID: 4064244049734890988, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -12149,6 +12189,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matWood
       objectReference: {fileID: 0}
+    - target: {fileID: 4686310789318681583, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.010000229
+      objectReference: {fileID: 0}
     - target: {fileID: 4688222296267381893, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -12617,6 +12661,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matWood
       objectReference: {fileID: 0}
+    - target: {fileID: 5115551197749120830, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 5115756393061962631, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -12937,6 +12985,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 5479594943266704461, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32999992
+      objectReference: {fileID: 0}
     - target: {fileID: 5481937210258290783, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
@@ -12968,6 +13020,10 @@ PrefabInstance:
     - target: {fileID: 5501653023577529361, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504264616845640259, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.010000229
       objectReference: {fileID: 0}
     - target: {fileID: 5506282606487263018, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -13965,6 +14021,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 6577048555149127620, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7320009
+      objectReference: {fileID: 0}
     - target: {fileID: 6577967467913644002, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -14221,6 +14281,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 6915874666443099800, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6919033751546928866, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -14232,6 +14296,10 @@ PrefabInstance:
     - target: {fileID: 6927925456699825609, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930993630804728590, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.738026
       objectReference: {fileID: 0}
     - target: {fileID: 6933826642910337597, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -14368,6 +14436,10 @@ PrefabInstance:
     - target: {fileID: 7112215645142862433, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117584208868277067, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.01
       objectReference: {fileID: 0}
     - target: {fileID: 7118764218488396737, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -15337,6 +15409,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 8088927590317512366, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.009999543
+      objectReference: {fileID: 0}
     - target: {fileID: 8089658641290112546, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
@@ -15729,6 +15805,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: matStone
       objectReference: {fileID: 0}
+    - target: {fileID: 8575812666058527132, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7320009
+      objectReference: {fileID: 0}
     - target: {fileID: 8576413365514199344, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matWood
@@ -15816,6 +15896,10 @@ PrefabInstance:
     - target: {fileID: 8637225979283423784, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
       value: matStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638733429296493215, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5990005
       objectReference: {fileID: 0}
     - target: {fileID: 8639815777835817486, guid: 31bfe5293406e7c45a3565ca2ce57101, type: 3}
       propertyPath: m_TagString
@@ -20319,6 +20403,10 @@ PrefabInstance:
     - target: {fileID: 244938875623574489, guid: b98c13530a4105d4e932ca4a980243d1, type: 3}
       propertyPath: m_TagString
       value: matStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 589375824382808419, guid: b98c13530a4105d4e932ca4a980243d1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 589375824382808419, guid: b98c13530a4105d4e932ca4a980243d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -91662,7 +91750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1863876816
 MonoBehaviour:
   m_ObjectHideFlags: 0
