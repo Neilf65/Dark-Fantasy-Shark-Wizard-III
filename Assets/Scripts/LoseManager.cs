@@ -34,6 +34,7 @@ public class LoseManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
         StartCoroutine(SelectDefaultButtonCoroutine());
     }
 

@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4301102207991813546, guid: 6cc8c5d3844fae3488bd2ec6384a2929, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.535
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301102207991813546, guid: 6cc8c5d3844fae3488bd2ec6384a2929, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.556
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301102207991813546, guid: 6cc8c5d3844fae3488bd2ec6384a2929, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.416
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4301102207991813546, guid: 6cc8c5d3844fae3488bd2ec6384a2929, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,8 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8157214190541834976, guid: 6cc8c5d3844fae3488bd2ec6384a2929, type: 3}
       propertyPath: m_Name
-      value: Trap Variant
+      value: TShellWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8746470063949976108, guid: 6cc8c5d3844fae3488bd2ec6384a2929, type: 3}
+      propertyPath: spikeShell
+      value: 
+      objectReference: {fileID: 4289571493846845284, guid: 3a8ebf166fea6114bb5d4ae3074f38a9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
