@@ -49,7 +49,6 @@ public class EnemyMovement : MonoBehaviour
         if (!walkPointSet || walkTime >= 4.0f) 
         SearchWalkPoint();
 
-
         if (walkPointSet)
             Agent.SetDestination(walkPoint);
 
@@ -59,7 +58,6 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
         
-        walkTime = 0f;
     }
 
     private void SearchWalkPoint()
@@ -72,6 +70,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
+            walkTime = 0f;
     }
 
     private void ChasePlayer()

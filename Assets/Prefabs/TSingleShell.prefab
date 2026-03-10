@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8161033326422587079}
   m_Layer: 0
-  m_Name: Trap
+  m_Name: TSingleShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 6129091620455919734}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.2, y: 0.6, z: -6.55}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -142,8 +142,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.6781839, z: 1}
+  m_Center: {x: 0, y: -0.33909202, z: -1.2660745e-15}
 --- !u!114 &3715734775677940033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,4 +156,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a4429a41d0420468d947ab5c08d21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  spikeShell: {fileID: 8837918069811327285, guid: c7b88ae0047e4ed4e8d98d24835de574, type: 3}
+  spikeShell: {fileID: 1516697875060134136, guid: cbb611aba70dd5144bc1935f249002db, type: 3}
