@@ -7,8 +7,8 @@ public class TrapSpawn : MonoBehaviour
 
     // GameObjects
     public GameObject spikeShell;
-    private float spawnTimer = 2.0f; 
-    private float cooldownTimer = 3.0f;
+    [SerializeField] private float spawnTimer = 0f; 
+
     
     PlayerController _player;
 
@@ -52,7 +52,8 @@ public class TrapSpawn : MonoBehaviour
 
     public void spawnTrap()
     {
-        Instantiate(spikeShell, transform.position, transform.rotation);
+        Vector3 spawnPosition = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+        Instantiate(spikeShell, spawnPosition, transform.rotation);
 
         spawnTimer = 2.0f;
     }
