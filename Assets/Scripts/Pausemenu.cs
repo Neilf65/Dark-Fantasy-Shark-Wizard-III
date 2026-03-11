@@ -1,10 +1,8 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Pausemenu : MonoBehaviour
 {
@@ -16,6 +14,7 @@ public class Pausemenu : MonoBehaviour
     private PlayerControls controls;
     private bool isPaused = false;
     private bool pauseRequested = false;
+
     public AudioClip clickSound;
     public AudioClip pauseSound;
 
@@ -32,14 +31,12 @@ public class Pausemenu : MonoBehaviour
 
     void OnDisable()
     {
-     
-        controls.Land.Disable();
         controls.Land.Pause.performed -= OnPausePerformed;
+        controls.Land.Disable();
     }
 
     private void OnPausePerformed(InputAction.CallbackContext ctx)
     {
-        // Safe: set flag, do NOT modify UI here
         pauseRequested = true;
     }
 
@@ -82,16 +79,18 @@ public class Pausemenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Select first button for controller
-        StartCoroutine(SelectFirstButtonCoroutine());
         music.Pause();
+
         if (UIAudioManager.instance != null)
             UIAudioManager.instance.PlayClick(pauseSound);
+
+        StartCoroutine(SelectFirstButtonCoroutine());
     }
 
     private IEnumerator SelectFirstButtonCoroutine()
     {
-        yield return null; // wait one frame for UI to activate
+        yield return null;
+
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButton);
     }
@@ -108,7 +107,6 @@ public class Pausemenu : MonoBehaviour
         music.UnPause();
     }
 
-    // Called by Resume BUTTON (plays sound)
     public void ResumeButton()
     {
         if (UIAudioManager.instance != null)
@@ -117,30 +115,13 @@ public class Pausemenu : MonoBehaviour
         ResumeGame();
     }
 
-    private IEnumerator ResumeRoutine()
-    {
-        if (UIAudioManager.instance != null)
-            UIAudioManager.instance.PlayClick(clickSound);
-
-        yield return null; 
-
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        music.UnPause();
-    }
     public void RestartGame()
     {
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        if (UIAudioManager.instance != null)
-        {
-            UIAudioManager.instance.PlayClick(clickSound);
-        }
     }
 
     public void ReturnToTitle()
@@ -148,17 +129,17 @@ public class Pausemenu : MonoBehaviour
         if (UIAudioManager.instance != null)
             UIAudioManager.instance.PlayClick(clickSound);
 
-        Time.timeScale = 1f; // unpause
+        Time.timeScale = 1f;
         isPaused = false;
+
         SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitPauseMenu()
     {
-        Application.Quit();
         if (UIAudioManager.instance != null)
-        {
             UIAudioManager.instance.PlayClick(clickSound);
-        }
+
+        Application.Quit();
     }
 }
