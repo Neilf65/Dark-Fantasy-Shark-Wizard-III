@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private AttemptManager attemptManager;
     [SerializeField] private Button firstButton;
+    [SerializeField] private AudioSource WinMusic;
+    [SerializeField] private AudioSource music;
+    public AudioClip clickSound;
+
 
 
     private void Awake()
@@ -45,10 +49,13 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         StartCoroutine(SelectFirstButtonCoroutine());
-        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
-        {
-            audio.Stop();
-        }
+        if (music != null)
+            music.Stop();
+
+        // Play lose screen music
+        if (WinMusic != null)
+            WinMusic.Play();
+
     }
     private IEnumerator SelectFirstButtonCoroutine()
     {
@@ -89,14 +96,24 @@ public class GameManager : MonoBehaviour
         Debug.Log("Current Scene Index: " + currentIndex);
 
         SceneManager.LoadScene(currentIndex);
+        if (UIAudioManager.instance != null)
+        {
+            UIAudioManager.instance.PlayClick(clickSound);
+        }
     }
     public void ReturnToTitle()
     {
         SceneManager.LoadScene("MainMenu");
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
     }
     public void QuitWin()
     {
         Application.Quit();
+        if (UIAudioManager.instance != null)
+        {
+            UIAudioManager.instance.PlayClick(clickSound);
+        }
     }
 }
 

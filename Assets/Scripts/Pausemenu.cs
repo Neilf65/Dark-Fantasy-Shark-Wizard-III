@@ -1,8 +1,9 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pausemenu : MonoBehaviour
@@ -15,6 +16,8 @@ public class Pausemenu : MonoBehaviour
     private PlayerControls controls;
     private bool isPaused = false;
     private bool pauseRequested = false;
+    public AudioClip clickSound;
+    public AudioClip pauseSound;
 
     void Awake()
     {
@@ -82,6 +85,8 @@ public class Pausemenu : MonoBehaviour
         // Select first button for controller
         StartCoroutine(SelectFirstButtonCoroutine());
         music.Pause();
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(pauseSound);
     }
 
     private IEnumerator SelectFirstButtonCoroutine()
@@ -99,24 +104,61 @@ public class Pausemenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
         music.UnPause();
     }
 
+    // Called by Resume BUTTON (plays sound)
+    public void ResumeButton()
+    {
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
+        ResumeGame();
+    }
+
+    private IEnumerator ResumeRoutine()
+    {
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
+        yield return null; 
+
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        music.UnPause();
+    }
     public void RestartGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (UIAudioManager.instance != null)
+        {
+            UIAudioManager.instance.PlayClick(clickSound);
+        }
     }
 
     public void ReturnToTitle()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
 
+        Time.timeScale = 1f; // unpause
+        isPaused = false;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitPauseMenu()
     {
         Application.Quit();
+        if (UIAudioManager.instance != null)
+        {
+            UIAudioManager.instance.PlayClick(clickSound);
+        }
     }
 }
