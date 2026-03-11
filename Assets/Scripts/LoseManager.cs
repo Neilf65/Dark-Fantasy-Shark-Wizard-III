@@ -8,13 +8,14 @@ public class LoseManager : MonoBehaviour
 {
     public static LoseManager manager;
     public static bool isGameOver;
-
+    public AudioClip clickSound;
 
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private Button replayButton;
     [SerializeField] private Button returnButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private AudioSource music;
+    [SerializeField] private AudioSource loseMusic;
 
     private void Awake()
     {
@@ -36,6 +37,13 @@ public class LoseManager : MonoBehaviour
         Cursor.visible = true;
 
         StartCoroutine(SelectDefaultButtonCoroutine());
+        if (music != null)
+            music.Stop();
+
+        
+        if (loseMusic != null)
+            loseMusic.Play();
+
     }
 
     private IEnumerator SelectDefaultButtonCoroutine()
@@ -54,11 +62,18 @@ public class LoseManager : MonoBehaviour
         Time.timeScale = 1f;
         isGameOver = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (UIAudioManager.instance != null)
+        {
+            UIAudioManager.instance.PlayClick(clickSound);
+        }
     }
 
     public void ReturnToTitle()
     {
-        Time.timeScale = 1f;
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
+        Time.timeScale = 1f; // unpause
         isGameOver = false;
         SceneManager.LoadScene("MainMenu");
     }

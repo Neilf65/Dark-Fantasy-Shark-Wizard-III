@@ -1,9 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Pausemenu : MonoBehaviour
 {
@@ -13,9 +12,11 @@ public class Pausemenu : MonoBehaviour
     [SerializeField] private AudioSource music;
 
     private PlayerControls controls;
-    private AttemptManager attemptManager;
     private bool isPaused = false;
     private bool pauseRequested = false;
+
+    public AudioClip clickSound;
+    public AudioClip pauseSound;
 
     void Awake()
     {
@@ -30,21 +31,17 @@ public class Pausemenu : MonoBehaviour
 
     void OnDisable()
     {
-     
-        controls.Land.Disable();
         controls.Land.Pause.performed -= OnPausePerformed;
+        controls.Land.Disable();
     }
 
     private void OnPausePerformed(InputAction.CallbackContext ctx)
     {
-        // Safe: set flag, do NOT modify UI here
         pauseRequested = true;
     }
 
     void Start()
     {
-        attemptManager = FindObjectOfType<AttemptManager>();
-
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
 
@@ -82,14 +79,18 @@ public class Pausemenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Select first button for controller
-        StartCoroutine(SelectFirstButtonCoroutine());
         music.Pause();
+
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(pauseSound);
+
+        StartCoroutine(SelectFirstButtonCoroutine());
     }
 
     private IEnumerator SelectFirstButtonCoroutine()
     {
-        yield return null; // wait one frame for UI to activate
+        yield return null;
+
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButton);
     }
@@ -102,26 +103,43 @@ public class Pausemenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
         music.UnPause();
+    }
+
+    public void ResumeButton()
+    {
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
+        ResumeGame();
     }
 
     public void RestartGame()
     {
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        attemptManager?.IncrementAttempts();
     }
 
     public void ReturnToTitle()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
 
+        Time.timeScale = 1f;
+        isPaused = false;
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitPauseMenu()
     {
+        if (UIAudioManager.instance != null)
+            UIAudioManager.instance.PlayClick(clickSound);
+
         Application.Quit();
     }
 }
